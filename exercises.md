@@ -6,7 +6,7 @@
 > Cách trả lời: thay dòng giữ chỗ dưới mỗi câu bằng câu trả lời.
 > `grade.py` đếm số câu đã trả lời (15 điểm cho 10 câu).
 >
-> Họ và tên: Nguyễn Ngọc Vinh  Mã học viên: L3A2026002833
+> Họ và tên: Nguyễn Ngọc Vinh  Mã học viên: L3A202602833
 
 ---
 

@@ -11,8 +11,8 @@
 | Mục | Nội dung |
 |-----|----------|
 | Họ và tên | Nguyễn Ngọc Vinh |
-| Mã học viên | L3A2026002833 |
-| Repo | https://github.com/VinhNN747/K4-L3A-DAY12-NguyenNgocVinh-L3A2026002833-CloudServicesAndDeployment |
+| Mã học viên | L3A202602833 |
+| Repo | https://github.com/VinhNN747/K4-L3A-DAY12-NguyenNgocVinh-L3A202602833-CloudServicesAndDeployment |
 
 ## Service
 
@@ -44,7 +44,7 @@ Thay `<URL>` bằng Public URL ở trên:
 curl -i https://k4-l3a-day12-nguyenngocvinh.onrender.com/health
 
 # 2. Readiness — mong đợi 200 {"status":"ready"} (đã nối được Redis)
-curl -i https://k4-l3a-day12-nguyenngocvinh.onrender.com/ready
+
 
 # 3. Không có API key — mong đợi 401
 curl -i -X POST https://k4-l3a-day12-nguyenngocvinh.onrender.com/ask \

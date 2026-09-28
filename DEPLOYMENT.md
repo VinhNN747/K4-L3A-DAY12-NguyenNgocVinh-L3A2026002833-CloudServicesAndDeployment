@@ -10,17 +10,17 @@
 
 | Mục | Nội dung |
 |-----|----------|
-| Họ và tên | (điền họ tên) |
-| Mã học viên | (điền mã học viên) |
-| Repo | (điền link repo K4-L3A-DAY12-HoVaTen-MSSV-CloudServicesAndDeployment) |
+| Họ và tên | Nguyễn Ngọc Vinh |
+| Mã học viên | L3A2026002833 |
+| Repo | https://github.com/VinhNN747/K4-L3A-DAY12-NguyenNgocVinh-L3A2026002833-CloudServicesAndDeployment |
 
 ## Service
 
 | Mục | Nội dung |
 |-----|----------|
-| Public URL | https://TODO-thay-bang-url-that.up.railway.app |
-| Platform | Railway / Render / Cloud Run — (điền platform bạn dùng) |
-| Ngày deploy | (điền ngày) |
+| Public URL | Chưa có — đang dùng local fallback tại `http://localhost:8000` |
+| Platform | Docker Compose local fallback; mục tiêu cloud là Render |
+| Ngày kiểm tra | 2026-09-28 |
 
 ## Biến Môi Trường Đã Set Trên Cloud
 
@@ -30,7 +30,7 @@ Ghi tên biến và **nguồn giá trị**, không ghi giá trị:
 |------|--------|---------|
 | `PORT` | ✅ | platform tự gán |
 | `AGENT_API_KEY` | ✅ | đặt trong dashboard, không nằm trong repo |
-| `REDIS_URL` | ✅ | (điền: Redis add-on của platform / Upstash / ...) |
+| `REDIS_URL` | ✅ | `redis` service trong Docker Compose; chỉ ghi nguồn, không ghi secret |
 | `RATE_LIMIT_PER_MINUTE` | ✅ | 10 |
 | `MONTHLY_BUDGET_USD` | ✅ | 10.0 |
 | `LOG_LEVEL` | ✅ | INFO |
@@ -73,7 +73,10 @@ done; echo
 Dán output của các lệnh trên vào đây:
 
 ```
-(điền output)
+GET /health  -> 200 {"status":"ok","service":"day12-agent","version":"1.0.0"}
+GET /ready   -> 200 {"status":"ready","redis":true}
+POST /ask không có X-API-Key -> 401
+POST /ask có key -> 200, user_id=sv-local-verify, history_length=0
 ```
 
 ## Ảnh Chụp Màn Hình
@@ -97,5 +100,7 @@ Không đăng ký được tài khoản cloud? Vẫn nộp được bài, nhưng
 5. Ghi rõ lý do không deploy được vào phần dưới đây:
 
 ```
-(điền lý do nếu dùng phương án dự phòng, ngược lại xóa mục này)
+Máy chưa có phiên đăng nhập Render/Railway hoặc CLI cloud đã xác thực, nên bài
+đang dùng Docker Compose local fallback. Stack `agent + redis` đã healthy và
+toàn bộ test CP5 dành cho fallback đã pass; cần cập nhật phần Service khi có URL.
 ```
